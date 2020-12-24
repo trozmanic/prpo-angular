@@ -2,7 +2,7 @@
 
 <ul class="seznami">
     <li *ngFor="let seznam of seznami" (click)="naPodrobnosti(seznam)">
-        <span>{{seznam.naziv}}</span>
+        <span>{{seznam.kanal}}</span>
         <button class="delete"
                 (click)="delete(seznam); $event.stopPropagation()">x
         </button>

@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import { NakupovalniSeznam } from './models/seznam';
+
 import { SeznamiService } from './services/seznami.service';
+
+import { GovorilnaUra} from "./models/govorilnaura";
 
 @Component({
     moduleId: module.id,
@@ -10,8 +12,8 @@ import { SeznamiService } from './services/seznami.service';
     templateUrl: 'seznami.component.html'
 })
 export class SeznamiComponent implements OnInit {
-    seznami: NakupovalniSeznam[];
-    seznam: NakupovalniSeznam;
+    seznami: GovorilnaUra[];
+    seznam: GovorilnaUra;
 
     constructor(private seznamiService: SeznamiService,
                 private router: Router) {
@@ -23,16 +25,16 @@ export class SeznamiComponent implements OnInit {
 
     getSeznami(): void {
         this.seznamiService
-            .getSeznami()
+            .getGovorilneUre()
             .subscribe(seznami => this.seznami = seznami);
     }
 
-    naPodrobnosti(seznam: NakupovalniSeznam): void {
+    naPodrobnosti(seznam: GovorilnaUra): void {
         this.seznam = seznam;
         this.router.navigate(['/seznami', this.seznam.id]);
     }
 
-    delete(seznam: NakupovalniSeznam): void {
+    delete(seznam: GovorilnaUra): void {
         this.seznamiService
             .delete(seznam.id)
             .subscribe(seznamId => this.seznami = this.seznami.filter(s => s.id !== seznamId));

@@ -4,6 +4,7 @@ import {Router, Params, ActivatedRoute} from '@angular/router';
 import {SeznamiService} from './services/seznami.service';
 import { Artikel } from './models/artikel';
 import { switchMap } from 'rxjs/operators';
+import {GovorilnaUra} from "./models/govorilnaura";
 
 @Component({
     moduleId: module.id,
@@ -14,6 +15,7 @@ export class ArtikelDodajComponent {
 
     artikel: Artikel = new Artikel;
     seznamId: number;
+    govorilnaUra: GovorilnaUra;
     private sub: any;
 
     constructor(private seznamiService: SeznamiService,
@@ -32,12 +34,12 @@ export class ArtikelDodajComponent {
       }
 
     submitForm(): void {
-        this.seznamiService.create(this.seznamId, this.artikel)
-            .subscribe(() => this.router.navigate(['/seznami/' + this.seznamId]));
+        this.seznamiService.create(this.govorilnaUra)
+            .subscribe(() => this.router.navigate(['/govorilne-ure/' + this.govorilnaUra.id]));
     }
 
     nazaj(): void {
-        this.router.navigate(['/seznami']);
+        this.router.navigate(['/govorilne-ure']);
     }
 
 }

@@ -6,10 +6,10 @@ import {SeznamPodrobnostiComponent} from './seznami/seznam-podrobnosti.component
 import { ArtikelDodajComponent } from './seznami/artikel-dodaj.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: '/seznami', pathMatch: 'full'},
-    {path: 'seznami', component: SeznamiComponent},
-    {path: 'seznami/:id', component: SeznamPodrobnostiComponent},
-    {path: 'seznami/:id/dodaj', component: ArtikelDodajComponent}
+    {path: '', redirectTo: '/govorilne-ure', pathMatch: 'full'},
+    {path: 'govorilne-ure', component: SeznamiComponent},
+    {path: 'govorilne-ure/:id', component: SeznamPodrobnostiComponent},
+    {path: 'govorilne-ure/:id/dodaj', component: ArtikelDodajComponent}
 ];
 
 @NgModule({
