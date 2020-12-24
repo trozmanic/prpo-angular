@@ -1,0 +1,67 @@
+GovorilnaUra
+
+private Integer id;
+
+private Date datum;
+
+private String ura;
+
+private Integer kapaciteta;
+
+private String kanal;
+
+private Profesor profesor;
+
+private List<Student> studenti;
+
+
+
+Profesor
+
+private Integer id;
+
+private String ime;
+
+private String priimek;
+
+private String predmet;
+
+private List<GovorilnaUra> govorilneUre;
+
+
+
+Student
+
+private Integer id;
+
+private Integer vpisnaStevilka;
+
+private String ime;
+
+private String priimek;
+
+private Integer letnik;
+
+private List<GovorilnaUra> govorilneUre;
+
+
+
+GovorilnaUraDto
+
+private Date datum;
+
+private String ura;
+
+private Integer kapaciteta;
+
+private String kanal;
+
+private Integer profesor_id;
+
+
+
+PrijavaOdjavaDto
+
+private Integer student_id;
+
+private Integer govorilna_ura_id;
