@@ -5,7 +5,7 @@
 
 <ul class="seznami">
     <li *ngFor="let seznam of seznami" >
-        <span routerLink="/govorilne-ure/{{seznam.id}}" >{{seznam.kanal}}</span>
+        <span routerLink="/govorilne-ure/{{seznam.id}}" >{{seznam.ura}}  {{seznam.kanal}}</span>
         <button class="delete"
                 (click)="delete(seznam); $event.stopPropagation()">x
         </button>
