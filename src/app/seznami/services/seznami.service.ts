@@ -58,5 +58,25 @@ export class SeznamiService {
         return this.http.post<GovorilnaUra>(this.urlStud + '/' + prijava.student_id.valueOf() + '/prijava-na-termin', JSON.stringify(prijava), {headers: this.headers})
             .pipe(catchError(this.handleError));
     }
+
+    getProfesorji(): Observable<Profesor[]> {
+        return this.http.get<Profesor[]>(this.urlProf).pipe(catchError(this.handleError));
+    }
+
+    getProfesor(id: number): Observable<Profesor> {
+        return this.http.get<Profesor>(this.urlProf + '/' + id)
+            .pipe(catchError(this.handleError));
+    }
+
+    deleteProfesor(id: number): Observable<Object> {
+        return this.http.delete(this.urlProf + '/' + id).pipe();
+    }
+
+    createProfesor(profesor: Profesor): Observable<Profesor> {
+        return this.http.post<Profesor>(this.urlProf, profesor)
+            .pipe(catchError(this.handleError));
+    }
 }
+
+
 

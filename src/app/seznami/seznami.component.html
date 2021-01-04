@@ -1,7 +1,7 @@
-<h2>Nakupovalni seznami</h2>
+<h2>Seznam govorilnih ur</h2>
 
 <ul class="seznami">
-    <li *ngFor="let seznam of seznami" (click)="naPodrobnosti(seznam)">
+    <li *ngFor="let seznam of seznami" >
         <span routerLink="/govorilne-ure/{{seznam.id}}" >{{seznam.kanal}}</span>
         <button class="delete"
                 (click)="delete(seznam); $event.stopPropagation()">x

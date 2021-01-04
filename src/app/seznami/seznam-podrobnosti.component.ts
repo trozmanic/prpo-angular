@@ -38,7 +38,6 @@ export class SeznamPodrobnostiComponent implements OnInit {
 
     onPrijava(id): void {
         let prijava: PrijavaOdjavaDto = new PrijavaOdjavaDto()
-        // tslint:disable-next-line:radix
         prijava.student_id = parseInt(String(id.student_id));
         prijava.govorilna_ura_id = this.govorilnaUra.id
         console.log(id);

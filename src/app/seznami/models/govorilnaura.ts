@@ -10,9 +10,4 @@ export class GovorilnaUra {
     kapaciteta: number;
 
     kanal: string;
-
-    professor: Profesor;
-
-    studenti: Student[];
-
 }

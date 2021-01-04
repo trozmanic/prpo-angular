@@ -1,20 +1,16 @@
 <div *ngIf="govorilnaUra">
 
     <h3>{{govorilnaUra.kanal}}</h3>
-    <h3>{{govorilnaUra.professor}}</h3>
 
     <p>{{govorilnaUra.ura}}</p>
     <p>Datum: {{govorilnaUra.datum | date: 'dd. MM. yyyy'}}</p>
 
-    <ul *ngFor="let student of govorilnaUra.studenti" class="artikli">
-        <li><b>{{student.ime}} {{student.priimek}} {{student.letnik}}</b></li>
-    </ul>
+
 
     <br>
 
     <form #prijava="ngForm" (ngSubmit)="onPrijava(prijava.value)">
-        <td><label></label></td>
-        <input type="number" name="student-id" ngModel>
+        <input type="number" name="student_id" ngModel>
         <input type = "submit" value = "submit">
     </form>
     <button (click)="dodajArtikel()">Dodaj artikel</button>
