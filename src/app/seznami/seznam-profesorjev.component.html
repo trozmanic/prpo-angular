@@ -1,5 +1,8 @@
+<h2>Seznam profesorjev</h2>
+
 <ul class="seznami">
     <li *ngFor="let profesor of profesorji">
         <span routerLink="/profesorji/{{profesor.id}}" >{{profesor.ime}} {{profesor.predmet}}</span>
     </li>
 </ul>
+<button (click)="nazaj()">Nazaj</button>

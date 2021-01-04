@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {SeznamiService} from './services/seznami.service';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Profesor} from './models/profesor';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-seznam-profesorjev',
@@ -13,6 +14,8 @@ export class SeznamProfesorjevComponent implements OnInit {
   public profesorji: Profesor[]
 
   constructor(private seznamiService: SeznamiService,
+              private route: ActivatedRoute,
+              private location: Location,
               private router: Router) { }
 
   ngOnInit(): void {
@@ -23,6 +26,10 @@ export class SeznamProfesorjevComponent implements OnInit {
   getProfesorji() {
     this.seznamiService.getProfesorji()
         .subscribe(profesorji => this.profesorji = profesorji)
+  }
+
+  nazaj(): void {
+    this.router.navigate(['govorilne-ure']);
   }
 
 }
