@@ -31,7 +31,7 @@ import { StudentPodrobnostiComponent } from './seznami/student-podrobnosti.compo
         ArtikelDodajComponent,
         SeznamStudentovComponent,
         SeznamStudentovComponent,
-        StudentPodrobnostiComponent
+        StudentPodrobnostiComponent,
         ArtikelDodajComponent,
         ProfesorComponent,
         SeznamProfesorjevComponent,

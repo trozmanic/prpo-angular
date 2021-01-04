@@ -17,7 +17,7 @@ const routes: Routes = [
     {path: 'dodaj', component: ArtikelDodajComponent},
     {path: 'profesorji/:id', component: ProfesorComponent},
     {path: 'profesorji', component: SeznamProfesorjevComponent},
-    {path: 'profesorji-create', component: CreateProfesorComponent}
+    {path: 'profesorji-create', component: CreateProfesorComponent},
     {path: 'dodaj', component: ArtikelDodajComponent},
     {path: 'studenti', component: SeznamStudentovComponent},
     {path: 'studenti/:id', component: StudentPodrobnostiComponent}

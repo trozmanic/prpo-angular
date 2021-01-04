@@ -1,0 +1,25 @@
+<h2>Dodaj artikel</h2>
+<div>
+    <form  (ngSubmit)="submitForm()" ngNativeValidate>
+        <table>
+            <tr>
+                <td><label >Ime</label></td>
+                <td><input [(ngModel)]="profesor.ime" id="ime" name="ime"  required /></td>
+            </tr>
+            <tr>
+                <td><label >Priimek</label></td>
+                <td><input [(ngModel)]="profesor.priimek" id="priimek" name="priimek"  required /></td>
+            </tr>
+            <tr>
+                <td><label >Predmet</label></td>
+                <td><input [(ngModel)]="profesor.predmet" id="predmet" name="predmet" required /></td>
+            </tr>
+
+
+        </table>
+
+        <br/>
+        <button type="button" (click)="nazaj()">Nazaj</button>
+        <button type="submit">Dodaj</button>
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div *ngIf="profesor">
+
+    <h3>{{profesor.ime}} {{profesor.priimek}}</h3>
+    <h3>Predmet: {{profesor.predmet}}</h3>
+
+
+    <p>Termin govorilnih ur:</p>
+    <ul *ngFor="let govorilnaUra of profesor.govorilneUre" class="artikli">
+        <li><b>{{govorilnaUra.datum}} {{govorilnaUra.ura}} {{govorilnaUra.kanal}}</b><button (click)="brisiGovorilnoUro(govorilnaUra.id)">Briši</button></li>
+    </ul>
+
+    <br>
+    <button (click)="brisiProf(profesor.id)">Izbriši Profesorja</button>
+    <button (click)="nazaj()">Nazaj</button>
+</div>
