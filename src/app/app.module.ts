@@ -15,6 +15,7 @@ import { SeznamProfesorjevComponent } from './seznami/seznam-profesorjev.compone
 import { CreateProfesorComponent } from './seznami/create-profesor.component';
 import { SeznamStudentovComponent } from './seznami/seznam-studentov.component';
 import { StudentPodrobnostiComponent } from './seznami/student-podrobnosti.component';
+import { CreateStudentComponent } from './seznami/create-student.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { StudentPodrobnostiComponent } from './seznami/student-podrobnosti.compo
         ArtikelDodajComponent,
         ProfesorComponent,
         SeznamProfesorjevComponent,
-        CreateProfesorComponent
+        CreateProfesorComponent,
+        CreateStudentComponent
     ],
     providers: [SeznamiService],
     bootstrap: [AppComponent]

@@ -33,5 +33,8 @@ export class SeznamStudentovComponent implements OnInit {
   nazaj(): void {
     this.router.navigate(['govorilne-ure']);
   }
+  dodaj(): void {
+    this.router.navigate(['/student-create']);
+  }
 
 }
