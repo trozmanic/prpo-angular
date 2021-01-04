@@ -10,6 +10,8 @@ import {SeznamiComponent} from './seznami/seznami.component';
 import {ArtikelDodajComponent} from './seznami/artikel-dodaj.component';
 import {SeznamPodrobnostiComponent} from './seznami/seznam-podrobnosti.component';
 import {SeznamiService} from './seznami/services/seznami.service';
+import { SeznamStudentovComponent } from './seznami/seznam-studentov.component';
+import { StudentPodrobnostiComponent } from './seznami/student-podrobnosti.component';
 
 
 @NgModule({
@@ -23,7 +25,10 @@ import {SeznamiService} from './seznami/services/seznami.service';
         AppComponent,
         SeznamiComponent,
         SeznamPodrobnostiComponent,
-        ArtikelDodajComponent
+        ArtikelDodajComponent,
+        SeznamStudentovComponent,
+        SeznamStudentovComponent,
+        StudentPodrobnostiComponent
     ],
     providers: [SeznamiService],
     bootstrap: [AppComponent]
