@@ -93,6 +93,10 @@ export class SeznamiService {
         return this.http.post<Profesor>(this.urlProf, profesor)
             .pipe(catchError(this.handleError));
     }
+    createStudent(student: Student): Observable<Student> {
+        return this.http.post<Student>(this.urlStud, student)
+            .pipe(catchError(this.handleError));
+    }
 }
 
 

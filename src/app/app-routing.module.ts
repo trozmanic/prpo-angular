@@ -9,6 +9,7 @@ import {SeznamProfesorjevComponent} from './seznami/seznam-profesorjev.component
 import {CreateProfesorComponent} from './seznami/create-profesor.component';
 import { SeznamStudentovComponent } from './seznami/seznam-studentov.component';
 import { StudentPodrobnostiComponent } from './seznami/student-podrobnosti.component';
+import { CreateStudentComponent } from './seznami/create-student.component';
 
 const routes: Routes = [
     {path: '', redirectTo: '/govorilne-ure', pathMatch: 'full'},
@@ -20,7 +21,8 @@ const routes: Routes = [
     {path: 'profesorji-create', component: CreateProfesorComponent},
     {path: 'dodaj', component: ArtikelDodajComponent},
     {path: 'studenti', component: SeznamStudentovComponent},
-    {path: 'studenti/:id', component: StudentPodrobnostiComponent}
+    {path: 'studenti/:id', component: StudentPodrobnostiComponent},
+    {path: 'student-create', component: CreateStudentComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,29 @@
+<h2>Ustvari studenta</h2>
+<div>
+    <form  (ngSubmit)="submitForm()" ngNativeValidate>
+        <table>
+            <tr>
+                <td><label >Ime</label></td>
+                <td><input [(ngModel)]="student.ime" id="ime" name="ime"  required /></td>
+            </tr>
+            <tr>
+                <td><label >Priimek</label></td>
+                <td><input [(ngModel)]="student.priimek" id="priimek" name="priimek"  required /></td>
+            </tr>
+            <tr>
+                <td><label >Vpisna stevilka</label></td>
+                <td><input [(ngModel)]="student.vpisnaStevilka" id="vpisnaStevilka" name="vpisnaStevilka" required /></td>
+            </tr>
+            <tr>
+                <td><label >Letnik</label></td>
+                <td><input [(ngModel)]="student.letnik" id="letnik" name="letnik" required /></td>
+            </tr>
+
+
+        </table>
+
+        <br/>
+        <button type="button" (click)="nazaj()">Nazaj</button>
+        <button type="submit">Dodaj</button>
+    </form>
+</div>
