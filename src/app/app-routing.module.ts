@@ -9,7 +9,7 @@ const routes: Routes = [
     {path: '', redirectTo: '/govorilne-ure', pathMatch: 'full'},
     {path: 'govorilne-ure', component: SeznamiComponent},
     {path: 'govorilne-ure/:id', component: SeznamPodrobnostiComponent},
-    {path: 'govorilne-ure/:id/dodaj', component: ArtikelDodajComponent}
+    {path: 'dodaj', component: ArtikelDodajComponent}
 ];
 
 @NgModule({

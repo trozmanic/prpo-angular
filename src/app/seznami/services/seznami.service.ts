@@ -20,6 +20,8 @@ export class SeznamiService {
 
     private headers = new HttpHeaders({'Content-Type': 'application/json'});
     private url = 'http://localhost:8080/v1/govorilne-ure';
+    private urlProf = 'http://localhost:8080/v1/profesorji';
+    private  urlStud = 'http://localhost:8080/v1/studenti';
 
     constructor(private http: HttpClient) {
     }
@@ -41,14 +43,20 @@ export class SeznamiService {
                         .pipe(catchError(this.handleError));
     }
 
-    create( govorilnaUra: GovorilnaUra): Observable<GovorilnaUra> {
-        return this.http.post<Artikel>(this.url , JSON.stringify(govorilnaUra), {headers: this.headers})
+    create( govorilnaUra: GovorilnaUraDto): Observable<GovorilnaUra> {
+        return this.http.post<GovorilnaUra>(this.urlProf + '/' + govorilnaUra.profesor_id + '/dodaj-govorilno-uro' , JSON.stringify(govorilnaUra), {headers: this.headers})
                         .pipe(catchError(this.handleError));
     }
+
 
     private handleError(error: any): Promise<any> {
         console.error('Prišlo je do napake', error);
         return Promise.reject(error.message || error);
+    }
+
+    prijavaNaTermin(prijava: PrijavaOdjavaDto): Observable<GovorilnaUra> {
+        return this.http.post<GovorilnaUra>(this.urlStud + '/' + prijava.student_id.valueOf() + '/prijava-na-termin', JSON.stringify(prijava), {headers: this.headers})
+            .pipe(catchError(this.handleError));
     }
 }
 

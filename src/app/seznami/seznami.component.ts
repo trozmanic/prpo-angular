@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 
 import { SeznamiService } from './services/seznami.service';
 
-import { GovorilnaUra} from "./models/govorilnaura";
+import { GovorilnaUra} from './models/govorilnaura';
 
 @Component({
     moduleId: module.id,
@@ -39,5 +39,7 @@ export class SeznamiComponent implements OnInit {
             .delete(seznam.id)
             .subscribe(seznamId => this.seznami = this.seznami.filter(s => s.id !== seznamId));
     }
+
+
 
 }

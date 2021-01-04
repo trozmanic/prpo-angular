@@ -1,14 +1,27 @@
 <h2>Dodaj artikel</h2>
-<div *ngIf="artikel">
-    <form (ngSubmit)="submitForm()" ngNativeValidate>
+<div>
+    <form  (ngSubmit)="submitForm()" ngNativeValidate>
         <table>
             <tr>
-                <td><label for="naziv">Naziv</label></td>
-                <td><input [(ngModel)]="artikel.naziv" id="naziv" name="naziv" required /></td>
+                <td><label for="datum">Kanal</label></td>
+                <td><input [(ngModel)]="govorilnaUra.kanal" id="kanal" name="kanal"  required /></td>
             </tr>
             <tr>
-                <td><label for="opis">Opis</label></td>
-                <td><input [(ngModel)]="artikel.opis" id="opis" name="opis" /></td>
+                <td><label for="datum">Datum</label></td>
+                <td><input [(ngModel)]="govorilnaUra.datum" id="datum" name="datum" type="date" required /></td>
+            </tr>
+            <tr>
+                <td><label for="datum">Ura</label></td>
+                <td><input [(ngModel)]="govorilnaUra.ura" id="ura" name="ura" required /></td>
+            </tr>
+
+            <tr>
+                <td><label for="datum">Kapaciteta</label></td>
+                <td><input [(ngModel)]="govorilnaUra.kapaciteta" id="kapaciteta" name="kapaciteta" required /></td>
+            </tr>
+            <tr>
+                <td><label for="profesor-id">Profesor-id</label></td>
+                <td><input [(ngModel)]="govorilnaUra.profesor_id" id="profesor-id" name="profesor-id" /></td>
             </tr>
         </table>
 

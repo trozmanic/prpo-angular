@@ -4,7 +4,8 @@ import {Router, Params, ActivatedRoute} from '@angular/router';
 import {SeznamiService} from './services/seznami.service';
 import { Artikel } from './models/artikel';
 import { switchMap } from 'rxjs/operators';
-import {GovorilnaUra} from "./models/govorilnaura";
+import {GovorilnaUra} from './models/govorilnaura';
+import {GovorilnaUraDto} from './models/govorilnauradto';
 
 @Component({
     moduleId: module.id,
@@ -13,29 +14,20 @@ import {GovorilnaUra} from "./models/govorilnaura";
 })
 export class ArtikelDodajComponent {
 
-    artikel: Artikel = new Artikel;
-    seznamId: number;
-    govorilnaUra: GovorilnaUra;
-    private sub: any;
+    govorilnaUra: GovorilnaUraDto = new GovorilnaUraDto();
+
 
     constructor(private seznamiService: SeznamiService,
-                private router: Router,
-                private route: ActivatedRoute) {
+                private router: Router) {
     }
 
-    ngOnInit() {
-        this.sub = this.route.params.subscribe(params => {
-           this.seznamId = +params['id'];
-        });
-      }
 
-      ngOnDestroy() {
-        this.sub.unsubscribe();
-      }
+
 
     submitForm(): void {
+        this.govorilnaUra.datum =  this.govorilnaUra.datum + 'T00:00:00.000000'
         this.seznamiService.create(this.govorilnaUra)
-            .subscribe(() => this.router.navigate(['/govorilne-ure/' + this.govorilnaUra.id]));
+            .subscribe((govorilnaUra) => this.router.navigate(['/govorilne-ure/' + govorilnaUra.id]));
     }
 
     nazaj(): void {

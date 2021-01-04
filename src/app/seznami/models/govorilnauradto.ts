@@ -1,5 +1,5 @@
 export class GovorilnaUraDto {
-    datum: Date;
+    datum: string;
     ura: string;
     kapaciteta: number;
     kanal: string;
