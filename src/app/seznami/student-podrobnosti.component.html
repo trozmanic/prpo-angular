@@ -1,0 +1,22 @@
+<h1>Student</h1>
+<div *ngIf="student">
+
+    <h3>{{student.ime}} {{student.priimek}}</h3>
+    <h5>letnik:{{student.letnik}}   vpisna:{{student.vpisnaStevilka}}</h5>
+
+
+    <h4>Prijavlen na govorilne ure</h4>
+    <div *ngFor="let govorilnaUra of student.govorilneUre">
+        <h3>{{govorilnaUra.kanal}}</h3>
+        <h3>{{govorilnaUra.professor}}</h3>
+
+        <p>{{govorilnaUra.ura}}</p>
+        <p>Datum: {{govorilnaUra.datum | date: 'dd. MM. yyyy'}}</p>
+
+        <button (click)="odjava(govorilnaUra.id)">Odjava Studenta</button>
+
+    </div>
+
+    <button (click)="nazaj()">Nazaj</button>
+
+</div>

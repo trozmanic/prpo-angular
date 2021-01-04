@@ -1,0 +1,14 @@
+<h1>Seznam studentov</h1>
+<div *ngIf="studenti">
+
+    <div *ngFor="let student of studenti">
+        <h3>{{student.ime}} {{student.priimek}}</h3>
+        <h5>{{student.letnik}} {{student.vpisnaStevilka}}</h5>
+
+        <button (click)="podrobnostiStudenta(student.id)">Podrobnosti Studenta</button>
+        <button (click)="brisiStudenta(student.id)">Brisi Studenta</button>
+        <button (click)="nazaj()">Nazaj</button>
+
+    </div>
+
+</div>
